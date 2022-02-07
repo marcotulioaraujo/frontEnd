@@ -1,0 +1,35 @@
+
+<div style="text-align:center">
+  <h1>
+    Insert the Stock ID
+  </h1>
+  <input type="number" id="stockID" name="stockID" #stockID>
+  <button (click)="getData(stockID.value)">Fetch Data</button>
+ </div>
+
+ 
+
+ <table datatable [dtOptions]="dtOptions" class="row-border hover material">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Average</th>
+      <th>Rating</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th>Updates</th>
+      <th>Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let liveStockSummary of data">
+      <td>{{ liveStockSummary.month }}</td>
+      <td>{{ liveStockSummary.average }}</td>
+      <td>{{ liveStockSummary.rating }}</td>
+      <td>{{ liveStockSummary.weight }}</td>
+      <td>{{ liveStockSummary.price }}</td>
+      <td>{{ liveStockSummary.updates }}</td>
+      <td>{{ liveStockSummary.difference }}</td>
+    </tr>    
+  </tbody>
+</table>
